@@ -1,0 +1,72 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+int
+main ()
+{
+  int i, j;
+  cout << "enter how many numbers you want to convert :";
+  cin >> j;
+  string res[j];
+
+  int a[j];
+
+  cout << "enter your number array: \n";
+
+  for (i = 0; i < j; i++)
+
+    {
+
+      cin >> a[i];
+
+    }
+
+  for (i = 0; i < j; i++)
+
+    {
+
+      switch (a[i])
+	{
+	case 0:
+	  res[i] = "zero";
+	  break;
+	case 1:
+	  res[i] = "one";
+	  break;
+	case 2:
+	  res[i] = "two";
+	  break;
+	case 3:
+	  res[i] = "three";
+	  break;
+	case 4:
+	  res[i] = "four";
+	  break;
+	case 5:
+	  res[i] = "five";
+	  break;
+	case 6:
+	  res[i] = "six";
+	  break;
+	case 7:
+	  res[i] = "seven";
+	  break;
+	case 8:
+	  res[i] = "eight";
+	  break;
+	case 9:
+	  res[i] = "'nine'";
+	  break;
+	default:
+	  cout << "Please try numbers between 0-9";
+	  break;
+	}
+      cout << res[i] << " ";
+    }}
