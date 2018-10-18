@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+void
+combine (char a[], char b[], int size)         //declaring the function
+{
+  int i, k;
+  char a3[size];
+  i = 0;                                    //counter for the origional arrays 
+  for (k = 0; k < size; k = k + 2)       // loop to initialize the result array
+    {
+      a3[k] = a[i];                   //to take the value of the first array and put it in the even positions
+      a3[k + 1] = b[i];                           //to take the value of the second array and put it in the odd positions
+      i++;
+    }
+  for (k = 0; k < size; k++) //to print out the array of result
+ 
+    cout << a3[k];
+}
+ 
+int
+main ()
+{
+ 
+ 
+ 
+  cout << "enter in size of array" << endl;                // to let the user choose the size of his arrays
+  int size, i, j;
+  cin >> size;
+  char a1[size], a2[size]; //assigne that size to the origional arrays
+  int length = sizeof (a1) + sizeof (a2);       //this is the size of the combined array
+ 
+// input arrays
+  cout << "enter your first list\n";
+  for (i = 0; i < size; i++)
+    {
+      cin >> a1[i];
+    }
+  cout << "enter your second list\n";
+  for (j = 0; j < size; j++)
+    {
+      cin >> a2[j];
+    }
+  combine (a1, a2, length);            //calling the function 
+  return 0;
+}
