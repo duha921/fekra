@@ -1,0 +1,95 @@
+
+#include <iostream>
+
+#include <fstream>
+#include <sstream>
+#include <string>
+
+
+using namespace std;
+
+
+bool hasDuplicates(string line)//this function is to find the most repeated name
+{
+    stringstream ss(line);
+    string token = "";
+    string latestToken = "";
+    bool duplicateFound = false;
+
+    while (getline(ss, token, ' '))
+    {
+        if (token == latestToken)
+        {
+            duplicateFound = true;
+        }
+
+        latestToken = token;
+    }
+
+    return duplicateFound;
+}
+
+int main(){
+
+
+
+  ifstream ip("oscar.csv");//open the oscar file 
+
+
+
+  if(!ip.is_open()) std::cout << "ERROR: File Open" << '\n';
+
+
+//strings declarations to read the friles and stor its values
+  string Index;
+
+  string Year;
+
+  string Age;
+
+  string name;
+
+   string Movie;
+
+
+
+  while(!ip.eof()){//as long it didn't to an end 
+
+
+
+    getline(ip,Index,',');//fetch the data
+
+     getline(ip,Year,',');
+
+
+
+    getline(ip,name,',');
+
+    getline(ip,Movie,'\n');
+   int counter = 0;
+    string line;
+    while (getline(ip, name))
+    {
+
+        if(hasDuplicates(name)) // to find the repeated names
+        {
+
+           counter++;
+
+            cout << counter << " : " << name << counter<<endl;
+        }
+    }//displaying contents
+    std::cout << "Id: "<<Index<< '\n';
+    std::cout << "Year: "<<Year << '\n';
+   std::cout << "Age: "<<Age << '\n';
+      std::cout << "Name: "<<name<< '\n';
+    std::cout << "Movie: "<<Movie << '\n';
+    std::cout << "-------------------" << '\n';
+
+
+
+  }
+  ip.close();
+
+}
+
